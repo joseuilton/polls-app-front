@@ -20,11 +20,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className={`${poppins.className} bg-neutral-950 min-h-screen p-4 lg:p-16`}>
+      <body className={`${poppins.className} bg-neutral-950 min-h-screen p-4 lg:px-16 lg:py-8`}>
         <div
           className="container mx-auto p-4 pb-6 bg-neutral-900 text-neutral-50 w-full
                      min-h-[calc(100vh-32px)] rounded-2xl
-                     lg:min-h-[calc(100vh-128px)] lg:p-8"
+                     lg:min-h-[calc(100vh-64px)] lg:p-8"
         >
           <Header />
           {children}
