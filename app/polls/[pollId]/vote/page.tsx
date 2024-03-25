@@ -8,7 +8,7 @@ export default function PollVotePage() {
 
       <form className="mt-6">
         <ul
-          className="bg-neutral-800 px-2 py-4 rounded-2xl max-h-[360px] overflow-y-auto flex flex-col
+          className="bg-neutral-800 px-2 py-4 rounded-2xl flex flex-col
                      gap-y-8"
         >
           <li>
