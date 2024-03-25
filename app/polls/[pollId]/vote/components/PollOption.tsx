@@ -3,7 +3,7 @@ export function PollOption() {
     <div>
       <label
         htmlFor="option-id"
-        className="relative block w-full bg-neutral-900 text-neutral-50 py-4 px-2 rounded-lg"
+        className="relative block w-full bg-neutral-900 text-neutral-50 py-2 px-4 rounded-lg"
       >
         <input
           type="radio"
