@@ -72,7 +72,7 @@ export default function CreatePollPage() {
           myPolls = JSON.parse(localStorage.getItem("@App:polls")!);
         }
 
-        myPolls.push(pollId);
+        myPolls.push({ id: pollId, title: pollTitle });
 
         localStorage.setItem("@App:polls", JSON.stringify(myPolls));
         setGeneratedLink(link);
