@@ -3,23 +3,13 @@ import { FiCopy } from "react-icons/fi";
 import { Button } from "@/app/components/Button";
 import { useEffect, useState } from "react";
 import Confetti from "react-confetti";
+import { ConfettiAnimation } from "@/app/components/ConfettiAnimation";
 
 export default function CreatePollSuccessPage() {
-  const [party, setParty] = useState(true);
 
   return (
     <>
-      <Confetti
-        width={innerWidth}
-        height={innerHeight}
-        style={{ pointerEvents: 'none' }}
-        numberOfPieces={party ? 500 : 0}
-        recycle={false}
-        onConfettiComplete={confetti => {
-          setParty(false)
-          confetti!.reset()
-        }}
-      />
+      <ConfettiAnimation />
       <main className="mt-16 flex flex-col items-center">
         <h1 className="text-3xl font-bold text-center">
           Parabéns, você acabou de criar uma nova enquete  👏
