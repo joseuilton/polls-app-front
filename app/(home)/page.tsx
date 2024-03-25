@@ -1,7 +1,11 @@
+"use client";
+import { useEffect, useState } from "react";
 import { Button } from "../components/Button";
 import Link from "next/link";
 
 export default function Home() {
+  const [polls, setPolls] = useState([]);
+
   return (
     <main className="mt-16 flex flex-col justify-center items-center">
       <h1 className="px-4 text-3xl font-bold text-center lg:text-4xl">
