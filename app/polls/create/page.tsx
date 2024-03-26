@@ -66,15 +66,19 @@ export default function CreatePollPage() {
           ${window.location.protocol}//${window.location.hostname}/polls/${pollId}/vote
         `.trim();
 
-        let myPolls = [];
 
-        if (localStorage.getItem("@App:polls")) {
-          myPolls = JSON.parse(localStorage.getItem("@App:polls")!);
+        if (typeof window !== "undefined") {
+          let myPolls = [];
+
+          if (localStorage.getItem("@App:polls")) {
+            myPolls = JSON.parse(localStorage.getItem("@App:polls")!);
+          }
+
+          myPolls.push({ id: pollId, title: pollTitle });
+
+          localStorage.setItem("@App:polls", JSON.stringify(myPolls));
         }
 
-        myPolls.push({ id: pollId, title: pollTitle });
-
-        localStorage.setItem("@App:polls", JSON.stringify(myPolls));
         setGeneratedLink(link);
       }
     } catch (err) {

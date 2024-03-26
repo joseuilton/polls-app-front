@@ -10,9 +10,12 @@ type Poll = {
 
 export default function Home() {
   const polls = useMemo<Poll[]>(() => {
-    if (localStorage.getItem("@App:polls")) {
-      return JSON.parse(localStorage.getItem("@App:polls")!);
+    if (typeof window !== "undefined") {
+      if (localStorage.getItem("@App:polls")) {
+        return JSON.parse(localStorage.getItem("@App:polls")!);
+      }
     }
+
 
     return null;
   }, []);
