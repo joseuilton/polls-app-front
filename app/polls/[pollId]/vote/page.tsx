@@ -7,6 +7,7 @@ import { api } from "@/app/lib/api";
 import { useRouter } from "next/navigation";
 import { ImSpinner8 } from "react-icons/im";
 import { SuccessView } from "./SuccessView";
+import { AxiosError } from "axios";
 
 type Option = {
   id: string;
@@ -61,6 +62,8 @@ export default function PollVotePage({ params }: PollVotePageProps) {
     setIsSubmitLoading(true);
 
     try {
+      console.log(poll?.options);
+      console.log(selectedOption);
       const response = await api.post(`/polls/${params.pollId}/votes`, {
         pollOptionId: selectedOption
       });
@@ -68,9 +71,10 @@ export default function PollVotePage({ params }: PollVotePageProps) {
       if (response.status === 201) {
         setIsSuccess(true);
       }
-    } catch (err) {
-      console.log(err);
-      toast.error("Você já votou nessa opção!");
+    } catch (err: any) {
+      if (err.response.status === 400) {
+        toast.error("Você já votou nessa opção!");
+      }
     } finally {
       setIsSubmitLoading(false);
     }

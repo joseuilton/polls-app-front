@@ -12,6 +12,7 @@ interface OptionItemProps {
 
 export function OptionItem({ totalVotes, option }: OptionItemProps) {
   const percentage = useMemo(() => {
+    if (totalVotes === 0) return 0;
     return parseInt(`${option.votes / totalVotes * 100}`);
   }, [totalVotes, option.votes]);
 
