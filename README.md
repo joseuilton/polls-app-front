@@ -74,7 +74,5 @@ $ npm run dev
 ## Contact
 José Uilton - [@joseuilton](https://www.linkedin.com/in/joseuilton/) - joseuilton.siqueira@gmail.com
 
-Project link: https://github.com/joseuilton/myscret
-
 ---
 Made with :purple-heart: by José Uilton
